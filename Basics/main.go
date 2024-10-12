@@ -14,6 +14,7 @@ func slowGreet(msg string, doneChan chan bool) {
 	time.Sleep(3 * time.Second)
 	fmt.Println("Hi I am slower, ", msg)
 	doneChan <- true
+	close(doneChan)
 }
 
 func main() {
@@ -21,7 +22,10 @@ func main() {
 	go greet("Vivek", done)
 	go slowGreet("Agastya", done)
 	go slowGreet("Shambhavi", done)
-	<-done
-	<-done
-	<-done
+	/* 	<-done
+	   	<-done
+	   	<-done */
+	for range done {
+		//This approach can only be used if you know the slowest task
+	}
 }
