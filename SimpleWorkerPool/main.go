@@ -5,31 +5,23 @@ import (
 	"time"
 )
 
-func performJob(id int, jobs <-chan int, results chan<- int) {
-	for j := range jobs {
-		fmt.Printf("Worker %v starting job %v \n", id, j)
-		time.Sleep(3 * time.Second)
-		fmt.Printf("Worker %v finished job %v \n", id, j)
-		results <- (j * 2)
+var maxNum = 1000000
+
+func verifyEven(num int) bool {
+	fmt.Print(num)
+	if num%2 == 0 {
+		return true
+	} else {
+		return false
 	}
 }
 
 func main() {
-	numJobs := 5
-	jobs := make(chan int, numJobs)
-	results := make(chan int, numJobs)
-
-	for i := 1; i <= 3; i++ {
-		go performJob(i, jobs, results)
+	startTime := time.Now()
+	fmt.Printf("Starting %s\n", startTime)
+	for i := 1; i <= maxNum; i++ {
+		verifyEven(i)
 	}
-
-	for j := 1; j <= numJobs; j++ {
-		jobs <- j
-	}
-
-	close(jobs)
-
-	for a := 1; a <= numJobs; a++ {
-		<-results
-	}
+	fmt.Printf("\nStarted at %s eneded at %s\n", startTime, time.Now())
+	fmt.Printf("Elapsed Time %f \n", time.Now().Sub(startTime).Seconds())
 }
