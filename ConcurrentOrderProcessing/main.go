@@ -28,7 +28,7 @@ var wg sync.WaitGroup
 
 func ProcessOrder(order Order) {
 	defer wg.Done()
-	time.Sleep(1 * time.Second)
+	time.Sleep(1 * time.Second) // Expensive task
 	lock.Lock()
 	if stockLevels[order.Item] >= order.Amount {
 		stockLevels[order.Item] = stockLevels[order.Item] - order.Amount
