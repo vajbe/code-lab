@@ -6,10 +6,9 @@ import (
 	"time"
 )
 
-var MAX_INT int64 = 100000000
-var totalPrimeNumber int32 = 0
+var totalSeqPrimeNumber int32 = 0
 
-func checkPrime(num int) {
+func checkSeqPrime(num int) {
 	if num&1 == 0 {
 		return
 	}
@@ -19,7 +18,7 @@ func checkPrime(num int) {
 			return
 		}
 	}
-	totalPrimeNumber++
+	totalSeqPrimeNumber++
 }
 
 func SequenceCheck() {
@@ -27,9 +26,9 @@ func SequenceCheck() {
 	start := time.Now()
 
 	for i := 3; i <= int(MAX_INT); i++ {
-		checkPrime(i)
+		checkSeqPrime(i)
 	}
 
-	fmt.Print("\nFinding for ", MAX_INT, " Started around ", start, " Found ", totalPrimeNumber+1, " Elapsed ", time.Since(start))
+	fmt.Print("\nFinding for ", MAX_INT, " Started around ", start, " Found ", totalSeqPrimeNumber+1, " Elapsed ", time.Since(start))
 
 }
