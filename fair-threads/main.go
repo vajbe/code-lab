@@ -5,5 +5,6 @@ const CONCURRENCY int = 10
 
 func main() {
 	// SequenceCheck()
-	UnfairCheck()
+	// UnfairCheck()
+	FairCheck()
 }
