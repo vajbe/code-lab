@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 	"sync"
+	"sync/atomic"
 	"time"
 )
 
@@ -19,29 +20,29 @@ func checkUnfairPrime(num int) {
 			return
 		}
 	}
-	totalUnfairPrimeNumber++
+	atomic.AddInt32(&totalUnfairPrimeNumber, 1)
 }
 
-func doBatch(start int64, end int64, wg *sync.WaitGroup) {
+func doBatch(start int, end int, wg *sync.WaitGroup, worker int) {
 	defer wg.Done()
-	fmt.Print(start, end)
-	checkUnfairPrime(int(start))
+	startTime := time.Now()
+	for i := start; i <= end; i++ {
+		checkUnfairPrime(i)
+	}
+	fmt.Print("\nWorker: ", worker, " \tStart: ", start, " \tEnd:", end, " \tElapsed: ", time.Since(startTime))
 }
 
 func UnfairCheck() {
 	var wg sync.WaitGroup
-	startTime := time.Now()
 	batchSize := int(MAX_INT) / CONCURRENCY
 	start := 2
 	end := batchSize
 	for i := 0; i < CONCURRENCY; i++ {
-		fmt.Print("\nStart ", start+1, " End ", end, " i ", i)
-		go doBatch(int64(start+1), int64(end), &wg)
+		wg.Add(1)
+		go doBatch(start+1, end, &wg, i)
 		start = end
 		end = start + batchSize
 	}
-
-	fmt.Print("Elapsed:", time.Since(startTime))
-
 	wg.Wait()
+	fmt.Print("\nTotal Prime Numbers ", totalUnfairPrimeNumber+1)
 }
