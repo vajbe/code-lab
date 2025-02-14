@@ -6,21 +6,17 @@ import (
 	"net"
 )
 
-func do(listener net.Listener) {
-	conn, err := listener.Accept()
-	if err != nil {
-		log.Fatal(err)
-	}
+var templateResponse = "HTTP/1.1 200 OK\r\n" +
+	"Content-Type: text/plain\r\n" +
+	"Content-Length: 13\r\n" +
+	"\r\n" +
+	"Hello, World!"
 
-	readSlice := []byte("")
-	conn.Read(readSlice)
-	response := "HTTP/1.1 200 OK\r\n" +
-		"Content-Type: text/plain\r\n" +
-		"Content-Length: 13\r\n" +
-		"\r\n" +
-		"Hello, World!"
-	conn.Write([]byte(response))
-
+func do(conn net.Conn) {
+	buffer := make([]byte, 1024)
+	conn.Read(buffer)
+	conn.Write([]byte(templateResponse))
+	conn.Close()
 }
 
 func main() {
@@ -29,8 +25,12 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Print("Server started on 8081")
+
 	for {
-		do(listner)
+		conn, err := listner.Accept()
+		if err != nil {
+			log.Fatal(err)
+		}
+		do(conn)
 	}
-	listner.Close()
 }
