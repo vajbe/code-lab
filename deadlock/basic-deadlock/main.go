@@ -1,3 +1,4 @@
+// Mimick basic deadlock condition
 package main
 
 import (
