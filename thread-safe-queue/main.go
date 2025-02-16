@@ -31,6 +31,8 @@ func (q *ConcurrentQueue) Dequeue() int32 {
 }
 
 func (q *ConcurrentQueue) Size() int {
+	q.muE.Lock()
+	defer q.muE.Unlock()
 	return len(q.queue)
 }
 
