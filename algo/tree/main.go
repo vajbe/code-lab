@@ -1,6 +1,8 @@
 package main
 
+import "algo/tree/problems"
+
 func main() {
-	// RightSideView()
-	ZigZagLevel()
+	problems.RightSideView()
+	problems.ZigZagLevel()
 }

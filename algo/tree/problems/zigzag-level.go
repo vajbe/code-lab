@@ -10,7 +10,7 @@
 // The function zigzagLevelOrder traverses the tree level by level (BFS) and alternates the order
 // of traversal for each level to achieve the zigzag pattern.
 
-package main
+package problems
 
 import "fmt"
 

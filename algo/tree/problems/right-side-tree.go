@@ -11,7 +11,7 @@
 // value at each level,
 // which represents the rightmost node visible from the right side.
 
-package main
+package problems
 
 import "fmt"
 
