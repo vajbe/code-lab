@@ -1,6 +1,6 @@
 package main
 
-import "algo/tree/problems"
+import "algo/binary-tree/problems"
 
 func main() {
 	problems.RightSideView()
