@@ -38,31 +38,30 @@ type TreeNode struct {
 }
 
 func getMinimumDifference(root *TreeNode) int {
-	if root == nil || root.Left == nil || root.Right == nil {
-		return math.MaxInt
-	}
 
-	left := 0
-	if root.Left != nil {
-		left = root.Val - root.Left.Val
-		if left < 0 {
-			left = -left
+	var prev *int
+	minDiff := math.MaxInt
+	var inorder func(node *TreeNode)
+
+	inorder = func(node *TreeNode) {
+		if node == nil {
+			return
 		}
-	}
+		inorder(node.Left)
 
-	right := 0
-	if root.Right != nil {
-		right = root.Val - root.Right.Val
-		if right < 0 {
-			right = -right
+		if prev != nil {
+			diff := node.Val - *prev
+			if diff < minDiff {
+				minDiff = diff
+			}
 		}
-	}
 
-	l := getMinimumDifference(root.Left)
-	r := getMinimumDifference(root.Right)
-	minCurr := math.Min(float64(l), float64(r))
-	minPrev := math.Min(float64(left), float64(right))
-	return int(math.Min(minCurr, minPrev))
+		val := node.Val
+		prev = &val
+		inorder(node.Right)
+	}
+	inorder(root)
+	return minDiff
 }
 
 func MinimumDiff() {
