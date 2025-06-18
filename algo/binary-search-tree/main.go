@@ -5,5 +5,6 @@ import "algo/binary-search-tree/problems"
 func main() {
 	/* problems.MinimumDiff() */
 	/* problems.KthSmallestElem() */
-	problems.ValidBST()
+	/* problems.ValidBST() */
+	problems.SearchInsertPos()
 }
