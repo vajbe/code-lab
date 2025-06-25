@@ -34,13 +34,13 @@ func dfs(startNode int) {
 
 func printGraph() {
 	n := len(graph)
-	fmt.Print("Rows:  ")
+	fmt.Print("-: ")
 	for i := 1; i < n; i++ {
 		fmt.Print(" ", i, "")
 	}
 	fmt.Println()
 	for i := 1; i < n; i++ {
-		fmt.Print("Node ", i, ":")
+		fmt.Print(i, ": ")
 		for j := 1; j < n; j++ {
 			fmt.Print(" ", graph[i][j])
 		}
@@ -69,8 +69,13 @@ func adjacencyMatrixGraph(vertices []int, edges [][]int) {
 }
 
 func BaseGraph() {
-	edges := [][]int{{1, 2}, {3, 4}, {1, 3}, {2, 4}}
+	/* edges := [][]int{{1, 2}, {3, 4}, {1, 3}, {2, 4}}
 	vertices := []int{1, 2, 3, 4}
 	adjacencyMatrixGraph(vertices, edges)
 	dfs(2)
+	*/
+	edges := [][]int{{1, 2}, {1, 4}, {2, 3}, {4, 5}, {5, 3}}
+	vertices := []int{1, 2, 3, 4, 5}
+	adjacencyMatrixGraph(vertices, edges)
+	dfs(1)
 }
