@@ -4,5 +4,6 @@ import "algo/graph/problems"
 
 func main() {
 	// problems.BaseGraph()
-	problems.NumProvince()
+	// problems.NumProvince()
+	problems.FindJudgeGraph()
 }
