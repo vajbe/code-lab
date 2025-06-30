@@ -23,19 +23,19 @@ func findJudge(n int, trust [][]int) int {
 	if n == 1 && len(trust) == 0 {
 		return 1
 	}
-	inDegree := make([]int, n+1)
+	degree := make([]int, n+1)
 	numJudge := -1
 	for i := 0; i < len(trust); i++ {
 		if trust[i][1] != 0 {
-			l := trust[i][1]
-			o := trust[i][0]
-			inDegree[l]++
-			inDegree[o]--
+			in := trust[i][1]
+			out := trust[i][0]
+			degree[in]++
+			degree[out]--
 		}
 	}
 
 	for i := 0; i <= n; i++ {
-		if inDegree[i] == n-1 {
+		if degree[i] == n-1 {
 			return i
 		}
 	}
