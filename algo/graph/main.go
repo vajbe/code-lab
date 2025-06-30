@@ -6,5 +6,6 @@ func main() {
 	// problems.BaseGraph()
 	// problems.NumProvince()
 	// problems.FindJudgeGraph()
-	problems.FindCenterOfGraph()
+	// problems.FindCenterOfGraph()
+	problems.ValidPath()
 }
