@@ -7,5 +7,6 @@ func main() {
 	// problems.NumProvince()
 	// problems.FindJudgeGraph()
 	// problems.FindCenterOfGraph()
-	problems.ValidPath()
+	// problems.ValidPath()
+	problems.AdjacencyListGraph()
 }
