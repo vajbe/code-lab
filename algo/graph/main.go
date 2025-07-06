@@ -10,5 +10,6 @@ func main() {
 	// problems.ValidPath()
 	// problems.AdjacencyListGraph()
 	// problems.SurroundedRegions()
-	problems.FloodFill()
+	// problems.FloodFill()
+	problems.NumIsland()
 }
