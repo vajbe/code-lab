@@ -25,12 +25,25 @@ func traverseListDFS(graph [][]int, startNode int) {
 	}
 }
 
+func traverseListDFSRec(graph [][]int, startNode int, visited []bool) {
+	if startNode < 0 || startNode >= len(graph) {
+		return
+	}
+	visited[startNode] = true
+	fmt.Print("\t", startNode)
+	for _, neigh := range graph[startNode] {
+		if !visited[neigh] {
+			traverseListDFSRec(graph, neigh, visited)
+		}
+	}
+}
+
 func traverseListBFS(graph [][]int, startNode int) {
 	queue := make([]int, 0)
 	visited := make([]bool, len(graph))
 
 	queue = append(queue, startNode)
-	fmt.Print("BFS =>")
+	fmt.Print("\nBFS =>")
 	for len(queue) > 0 {
 		el := queue[0]
 		queue = queue[1:]
@@ -78,4 +91,7 @@ func AdjacencyListGraph() {
 	printListGraph(graph)
 	traverseListDFS(graph, 0)
 	traverseListBFS(graph, 0)
+	visited := make([]bool, len(graph))
+	fmt.Print("\nRDFS")
+	traverseListDFSRec(graph, 0, visited)
 }
