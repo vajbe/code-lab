@@ -11,5 +11,6 @@ func main() {
 	// problems.AdjacencyListGraph()
 	// problems.SurroundedRegions()
 	// problems.FloodFill()
-	problems.NumIsland()
+	// problems.NumIsland()
+	problems.CalculateEquations()
 }
