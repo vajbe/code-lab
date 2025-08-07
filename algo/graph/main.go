@@ -8,9 +8,10 @@ func main() {
 	// problems.FindJudgeGraph()
 	// problems.FindCenterOfGraph()
 	// problems.ValidPath()
-	problems.AdjacencyListGraph()
+	// problems.AdjacencyListGraph()
 	// problems.SurroundedRegions()
 	// problems.FloodFill()
 	// problems.NumIsland()
 	// problems.CalculateEquations()
+	problems.TopoSortExample()
 }
