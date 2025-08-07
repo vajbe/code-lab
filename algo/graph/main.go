@@ -13,5 +13,6 @@ func main() {
 	// problems.FloodFill()
 	// problems.NumIsland()
 	// problems.CalculateEquations()
-	problems.TopoSortExample()
+	// problems.TopoSortExample()
+	problems.CourseSchedule()
 }
