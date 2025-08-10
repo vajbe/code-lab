@@ -9,5 +9,7 @@ func main() {
 	// RemoveDups()
 	// RemoveDupsSorted()
 	// FindMajority()
-	RotateArray()
+	// RotateArray()
+	// BuildMessage()
+	FindRemLeaves()
 }
