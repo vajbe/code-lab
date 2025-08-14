@@ -15,5 +15,6 @@ func main() {
 	// problems.CalculateEquations()
 	// problems.TopoSortExample()
 	// problems.CourseSchedule()
-	problems.CourseScheduleII()
+	// problems.CourseScheduleII()
+	problems.SnakeLad()
 }
