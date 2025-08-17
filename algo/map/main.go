@@ -2,5 +2,6 @@ package main
 
 func main() {
 	// RansomNote()
-	Isomorphic()
+	// Isomorphic()
+	WrdPattern()
 }
