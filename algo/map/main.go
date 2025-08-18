@@ -4,5 +4,6 @@ func main() {
 	// RansomNote()
 	// Isomorphic()
 	// WrdPattern()
-	TwoSumm()
+	// TwoSumm()
+	IsAna()
 }
