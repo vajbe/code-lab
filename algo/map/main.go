@@ -5,5 +5,6 @@ func main() {
 	// Isomorphic()
 	// WrdPattern()
 	// TwoSumm()
-	IsAna()
+	// IsAna()
+	HappyNum()
 }
