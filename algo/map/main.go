@@ -6,5 +6,6 @@ func main() {
 	// WrdPattern()
 	// TwoSumm()
 	// IsAna()
-	HappyNum()
+	// HappyNum()
+	ContainsDup()
 }
