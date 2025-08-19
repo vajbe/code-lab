@@ -7,5 +7,6 @@ func main() {
 	// TwoSumm()
 	// IsAna()
 	// HappyNum()
-	ContainsDup()
+	// ContainsDup()
+	LongestCon()
 }
