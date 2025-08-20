@@ -8,5 +8,6 @@ func main() {
 	// IsAna()
 	// HappyNum()
 	// ContainsDup()
-	LongestCon()
+	// LongestCon()
+	GroupAna()
 }
