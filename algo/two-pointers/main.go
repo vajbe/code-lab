@@ -4,5 +4,6 @@ import "algo/two-pointers/problems"
 
 func main() {
 	// problems.Palindrome()
-	problems.Subsequence()
+	// problems.Subsequence()
+	problems.TwoSum()
 }
