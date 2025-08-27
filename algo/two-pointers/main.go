@@ -6,5 +6,6 @@ func main() {
 	// problems.Palindrome()
 	// problems.Subsequence()
 	// problems.TwoSum()
-	problems.MaxAreaContainer()
+	// problems.MaxAreaContainer()
+	problems.Three()
 }
