@@ -1,3 +1,41 @@
+/*
+Problem: Valid Sudoku
+
+Description:
+Given a 9x9 Sudoku board, determine if it is valid. Only the filled cells need
+to be validated according to these rules:
+  1. Each row must not contain duplicate digits.
+  2. Each column must not contain duplicate digits.
+  3. Each of the nine 3x3 sub-boxes must not contain duplicate digits.
+
+Note:
+- The board does not need to be solvable.
+- Cells are either '1'-'9' or '.' representing empty.
+
+Approach (Pseudo code):
+1. Create 9 sets/maps for rows, 9 for columns, and 9 for 3x3 boxes.
+2. Traverse each cell (r, c):
+   - Skip if value is '.'.
+   - Check if digit already exists in row[r], col[c], or box[(r/3)*3 + c/3].
+     → If yes, return false.
+   - Otherwise, add digit to these sets/maps.
+3. If no duplicates found, return true.
+
+Time Complexity:
+- O(9x9) = O(1) (constant work, since board size is fixed).
+- More generally, O(N^2) for an N x N board.
+
+Space Complexity:
+- O(27N) in worst case (9 rows + 9 cols + 9 boxes storing up to N digits).
+- For 9x9, it’s effectively O(1).
+
+Patterns:
+- Hashing / Set-based duplicate detection.
+- Matrix traversal.
+- Constraint validation.
+
+*/
+
 package problems
 
 import "fmt"
