@@ -80,7 +80,7 @@ func spiralOrder(matrix [][]int) []int {
 	return res
 }
 
-func main() {
+func SpiralMat() {
 	matrix := [][]int{
 		{1, 2, 3},
 		{4, 5, 6},

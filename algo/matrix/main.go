@@ -4,5 +4,6 @@ import "matrix/problems"
 
 func main() {
 	// problems.ValidSudoku()
-	problems.SpiralMat()
+	// problems.SpiralMat()
+	problems.RotateIamge()
 }
