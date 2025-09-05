@@ -6,5 +6,7 @@ func main() {
 	// problems.ValidSudoku()
 	// problems.SpiralMat()
 	// problems.RotateIamge()
-	problems.SetZero()
+	// problems.SetZero()
+
+	problems.GameLife()
 }
