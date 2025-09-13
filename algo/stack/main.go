@@ -4,5 +4,6 @@ import "stack/problems"
 
 func main() {
 	// problems.ValidPars()
-	problems.SimplePath()
+	// problems.SimplePath()
+	problems.EvalPRN()
 }
