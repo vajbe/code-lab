@@ -3,5 +3,6 @@ package main
 import "stack/problems"
 
 func main() {
-	problems.ValidPars()
+	// problems.ValidPars()
+	problems.SimplePath()
 }
