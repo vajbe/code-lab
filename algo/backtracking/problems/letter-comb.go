@@ -2,14 +2,32 @@ package problems
 
 import "fmt"
 
-func helperFunction(char string, m map[string][]string, digits string) []string {
+func dfs(char string, m map[string][]string, digits string) []string {
+	// dfs with backtracking
+
 	if len(digits) == 0 {
 		return []string{char}
 	}
 	res := []string{}
 	letters := m[string(digits[0])]
 	for _, c := range letters {
-		res = append(res, helperFunction(char+string(c), m, digits[1:])...)
+		res = append(res, dfs(char+string(c), m, digits[1:])...)
+	}
+	return res
+}
+
+func bfs(m map[string][]string, digits string) []string {
+	// bfs
+	res := []string{""}
+
+	for i := 0; i < len(digits); i++ {
+		next := []string{}
+		for _, prefix := range res { //queue
+			for _, letter := range m[string(digits[i])] {
+				next = append(next, prefix+letter)
+			}
+		}
+		res = next
 	}
 	return res
 }
@@ -27,7 +45,8 @@ func letterCombinations(digits string) []string {
 	m["7"] = []string{"p", "q", "r", "s"}
 	m["8"] = []string{"t", "u", "v"}
 	m["9"] = []string{"w", "x", "y", "z"}
-	res := helperFunction("", m, digits)
+	// res := dfs("", m, digits)
+	res := bfs(m, digits)
 	return res
 }
 
