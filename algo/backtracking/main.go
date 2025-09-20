@@ -4,5 +4,6 @@ import "backtracking/problems"
 
 func main() {
 	// problems.LetterComb()
-	problems.Combinations()
+	// problems.Combinations()
+	problems.Permutations()
 }
