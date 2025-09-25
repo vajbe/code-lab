@@ -1,10 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"sync"
 	"sync/atomic"
-	"time"
 )
 
 const MAX_NUM int64 = 89237849009
@@ -31,7 +29,7 @@ func Task(start int64, step int, wg *sync.WaitGroup) {
 }
 
 func main() {
-	startTime := time.Now()
+	/* startTime := time.Now()
 
 	numWorkers := 2
 	wg := sync.WaitGroup{}
@@ -44,5 +42,6 @@ func main() {
 	wg.Wait()
 
 	fmt.Printf("\nTime Elapsed: %fs", time.Since(startTime).Seconds())
-	fmt.Printf("\nTotal Even: %d, Total Odd: %d\n", EvenCount, MAX_NUM-EvenCount)
+	fmt.Printf("\nTotal Even: %d, Total Odd: %d\n", EvenCount, MAX_NUM-EvenCount) */
+	HandleOddEven()
 }
